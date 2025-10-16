@@ -159,10 +159,22 @@ window.addEventListener('scroll', () => {
         }
     });
     
+    // Update main nav links
     document.querySelectorAll('.nav-links a').forEach(link => {
         link.classList.remove('active');
         if (link.getAttribute('href').slice(1) === current) {
             link.classList.add('active');
+        }
+    });
+    
+    // Update side nav dots
+    document.querySelectorAll('.side-nav-dot').forEach(dot => {
+        dot.classList.remove('active');
+        const href = dot.getAttribute('href');
+        if (href === '#home' && current === 'home') {
+            dot.classList.add('active');
+        } else if (href.slice(1) === current) {
+            dot.classList.add('active');
         }
     });
 });
@@ -275,3 +287,62 @@ window.addEventListener('scroll', () => {
         }
     }
 });
+
+// ===== Contact Form Handling =====
+const contactForm = document.getElementById('contact-form');
+const formStatus = document.getElementById('form-status');
+
+if (contactForm) {
+    contactForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        
+        const formData = {
+            name: document.getElementById('name').value,
+            email: document.getElementById('email').value,
+            message: document.getElementById('message').value
+        };
+        
+        // Show loading state
+        const submitBtn = contactForm.querySelector('.submit-btn');
+        const originalText = submitBtn.innerHTML;
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+        submitBtn.disabled = true;
+        
+        // Simulate form submission (replace with actual API call)
+        setTimeout(() => {
+            formStatus.className = 'form-status success';
+            formStatus.textContent = '✓ Thank you! Your message has been sent successfully. I\'ll get back to you soon!';
+            contactForm.reset();
+            
+            submitBtn.innerHTML = originalText;
+            submitBtn.disabled = false;
+            
+            // Hide status after 5 seconds
+            setTimeout(() => {
+                formStatus.style.display = 'none';
+            }, 5000);
+        }, 1500);
+        
+        // For actual implementation, use something like:
+        /*
+        try {
+            const response = await fetch('YOUR_API_ENDPOINT', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(formData)
+            });
+            
+            if (response.ok) {
+                formStatus.className = 'form-status success';
+                formStatus.textContent = '✓ Message sent successfully!';
+                contactForm.reset();
+            } else {
+                throw new Error('Failed to send');
+            }
+        } catch (error) {
+            formStatus.className = 'form-status error';
+            formStatus.textContent = '✗ Failed to send message. Please try again or email directly.';
+        }
+        */
+    });
+}

@@ -139,7 +139,7 @@ This project is open source and available under the [MIT License](LICENSE).
 **Rounak Mandal**
 - GitHub: [@RounakMandal3000](https://github.com/RounakMandal3000)
 - LinkedIn: [Rounak Mandal](https://www.linkedin.com/in/rounakmandal/)
-- Email: rounakmandal9876@gmail.com
+- Email: rounakmandal3000@gmail.com
 
 ## 🙏 Acknowledgments
 
