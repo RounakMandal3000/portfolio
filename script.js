@@ -78,6 +78,19 @@ themeToggle.addEventListener('click', () => {
     htmlElement.setAttribute('data-theme', newTheme);
     localStorage.setItem('theme', newTheme);
     updateThemeIcon();
+    
+    // Handle cotton generation based on theme
+    setTimeout(() => {
+        if (newTheme === 'dark') {
+            startCottonGeneration();
+        } else {
+            stopCottonGeneration();
+            const starsContainer = document.getElementById('stars-container');
+            if (starsContainer) {
+                starsContainer.innerHTML = '';
+            }
+        }
+    }, 50);
 });
 
 // ===== Scroll Progress Bar =====
@@ -355,15 +368,28 @@ if (contactForm) {
 
 // ===== Interactive Cotton Field (Dark Mode Feature) =====
 let cottonCount = 0;
-const starsContainer = document.getElementById('stars-container');
+let starsContainer;
 const maxCotton = 25; // Maximum cotton balls on screen
 let cottonInterval = null;
+let starCounter;
 
-// Create cotton counter element
-const starCounter = document.createElement('div');
-starCounter.className = 'star-counter';
-starCounter.innerHTML = '☁️ Cotton Picked: <span id="star-count">0</span>';
-document.body.appendChild(starCounter);
+// Initialize cotton elements when DOM is ready
+function initializeCottonField() {
+    starsContainer = document.getElementById('stars-container');
+    
+    // Create cotton counter element
+    starCounter = document.createElement('div');
+    starCounter.className = 'star-counter';
+    starCounter.innerHTML = '☁️ Cotton Picked: <span id="star-count">0</span>';
+    document.body.appendChild(starCounter);
+}
+
+// Call initialization when DOM is ready
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeCottonField);
+} else {
+    initializeCottonField();
+}
 
 // Function to create a cotton ball on the sides
 function createCottonBall() {
@@ -484,28 +510,8 @@ function stopCottonGeneration() {
     }
 }
 
-// Add cotton generation to existing theme toggle
-const originalThemeToggle = themeToggle.addEventListener;
-themeToggle.addEventListener('click', () => {
-    // Wait for theme to change
-    setTimeout(() => {
-        const currentTheme = document.documentElement.getAttribute('data-theme');
-        
-        if (currentTheme === 'dark') {
-            // Start cotton generation
-            startCottonGeneration();
-        } else {
-            // Stop cotton generation and clear all cotton balls
-            stopCottonGeneration();
-            starsContainer.innerHTML = '';
-            cottonCount = 0;
-            document.getElementById('star-count').textContent = '0';
-        }
-    }, 50);
-});
-
-// Start cotton generation if already in dark mode on page load
-document.addEventListener('DOMContentLoaded', () => {
+// Start cotton generation on page load if in dark mode
+window.addEventListener('DOMContentLoaded', () => {
     const currentTheme = document.documentElement.getAttribute('data-theme');
     if (currentTheme === 'dark') {
         setTimeout(() => startCottonGeneration(), 500);
