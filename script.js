@@ -352,3 +352,162 @@ if (contactForm) {
         */
     });
 }
+
+// ===== Interactive Cotton Field (Dark Mode Feature) =====
+let cottonCount = 0;
+const starsContainer = document.getElementById('stars-container');
+const maxCotton = 25; // Maximum cotton balls on screen
+let cottonInterval = null;
+
+// Create cotton counter element
+const starCounter = document.createElement('div');
+starCounter.className = 'star-counter';
+starCounter.innerHTML = '☁️ Cotton Picked: <span id="star-count">0</span>';
+document.body.appendChild(starCounter);
+
+// Function to create a cotton ball on the sides
+function createCottonBall() {
+    const isDarkMode = document.documentElement.getAttribute('data-theme') === 'dark';
+    if (!isDarkMode) return;
+    
+    const star = document.createElement('div');
+    star.className = 'star';
+    
+    // Randomly place on left or right side with more spread
+    const isLeft = Math.random() < 0.5;
+    const sideMargin = 200; // Maximum distance from edge
+    const x = isLeft ? Math.random() * sideMargin + 10 : window.innerWidth - Math.random() * sideMargin - 40;
+    const y = Math.random() * window.innerHeight; // Full height coverage
+    
+    star.style.left = x + 'px';
+    star.style.top = y + 'px';
+    star.style.opacity = '0';
+    
+    starsContainer.appendChild(star);
+    
+    // Fade in
+    setTimeout(() => {
+        star.style.transition = 'opacity 1.5s ease-in';
+        star.style.opacity = '1';
+    }, 10);
+    
+    // Click handler to collect cotton
+    star.addEventListener('click', function(e) {
+        e.stopPropagation();
+        collectCotton(star);
+    });
+    
+    // Auto-remove if too many cotton balls
+    const allCotton = starsContainer.querySelectorAll('.star');
+    if (allCotton.length > maxCotton) {
+        const oldest = allCotton[0];
+        oldest.style.transition = 'opacity 1s ease-out';
+        oldest.style.opacity = '0';
+        setTimeout(() => oldest.remove(), 1000);
+    }
+}
+
+// Function to collect cotton
+function collectCotton(cotton) {
+    cotton.classList.add('collected');
+    cottonCount++;
+    document.getElementById('star-count').textContent = cottonCount;
+    
+    // Add celebration effect
+    createSparkles(cotton.offsetLeft, cotton.offsetTop);
+    
+    setTimeout(() => {
+        cotton.remove();
+    }, 800);
+}
+
+// Create sparkle effect when collecting star
+function createSparkles(x, y) {
+    for (let i = 0; i < 8; i++) {
+        const sparkle = document.createElement('div');
+        sparkle.style.position = 'absolute';
+        sparkle.style.left = x + 'px';
+        sparkle.style.top = y + 'px';
+        sparkle.style.width = '4px';
+        sparkle.style.height = '4px';
+        sparkle.style.background = 'white';
+        sparkle.style.borderRadius = '50%';
+        sparkle.style.pointerEvents = 'none';
+        sparkle.style.zIndex = '1002';
+        
+        const angle = (Math.PI * 2 * i) / 8;
+        const distance = 50;
+        const tx = Math.cos(angle) * distance;
+        const ty = Math.sin(angle) * distance;
+        
+        sparkle.style.transition = 'all 0.6s ease-out';
+        
+        starsContainer.appendChild(sparkle);
+        
+        setTimeout(() => {
+            sparkle.style.transform = `translate(${tx}px, ${ty}px)`;
+            sparkle.style.opacity = '0';
+        }, 10);
+        
+        setTimeout(() => {
+            sparkle.remove();
+        }, 600);
+    }
+}
+
+// Auto-generate cotton balls periodically in dark mode
+function startCottonGeneration() {
+    if (cottonInterval) clearInterval(cottonInterval);
+    
+    const isDarkMode = document.documentElement.getAttribute('data-theme') === 'dark';
+    if (isDarkMode) {
+        // Generate initial cotton balls
+        for (let i = 0; i < 15; i++) {
+            setTimeout(() => createCottonBall(), i * 150);
+        }
+        
+        // Continue generating new cotton balls every 4 seconds
+        cottonInterval = setInterval(() => {
+            const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+            if (isDark) {
+                createCottonBall();
+            }
+        }, 4000);
+    }
+}
+
+// Stop cotton generation
+function stopCottonGeneration() {
+    if (cottonInterval) {
+        clearInterval(cottonInterval);
+        cottonInterval = null;
+    }
+}
+
+// Add cotton generation to existing theme toggle
+const originalThemeToggle = themeToggle.addEventListener;
+themeToggle.addEventListener('click', () => {
+    // Wait for theme to change
+    setTimeout(() => {
+        const currentTheme = document.documentElement.getAttribute('data-theme');
+        
+        if (currentTheme === 'dark') {
+            // Start cotton generation
+            startCottonGeneration();
+        } else {
+            // Stop cotton generation and clear all cotton balls
+            stopCottonGeneration();
+            starsContainer.innerHTML = '';
+            cottonCount = 0;
+            document.getElementById('star-count').textContent = '0';
+        }
+    }, 50);
+});
+
+// Start cotton generation if already in dark mode on page load
+document.addEventListener('DOMContentLoaded', () => {
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    if (currentTheme === 'dark') {
+        setTimeout(() => startCottonGeneration(), 500);
+    }
+});
