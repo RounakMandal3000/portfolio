@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rounak Mandal | ML & Systems Research</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scroll-progress"></div>
+
+    <!-- Dark Mode Toggle -->
+    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">RM</a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#achievements">Achievements</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-image-container">
+                    <img src="profile_photo.jpg" alt="Rounak Mandal" class="hero-image">
+                </div>
+                <h1 class="hero-title">Rounak Mandal</h1>
+                <p class="hero-subtitle">Final Year Dual Degree Student, E&ECE, IIT Kharagpur</p>
+                <p class="hero-subtitle secondary">
+                    <span class="typing-text"></span>
+                    <span class="cursor">|</span>
+                </p>
+                <p class="hero-bio">
+                    Passionate about building intelligent and efficient AI systems. My work spans from diffusion models 
+                    and vision-language research to systems-level optimizations in generative pipelines.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#" class="btn btn-primary">
+                        <i class="fas fa-download"></i> Download Résumé
+                    </a>
+                    <a href="#contact" class="btn btn-secondary">
+                        <i class="fas fa-envelope"></i> Contact Me
+                    </a>
+                    <a href="https://github.com/RounakMandal3000" target="_blank" class="btn btn-outline">
+                        <i class="fab fa-github"></i> View GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section" id="about">
+        <div class="container">
+            <h2 class="section-title">Education</h2>
+            <div class="education-timeline">
+                <div class="education-card">
+                    <div class="education-header">
+                        <div>
+                            <h3>Indian Institute of Technology Kharagpur</h3>
+                            <p class="education-degree">5th Year Dual Degree Undergraduate, Department of E&ECE</p>
+                        </div>
+                        <div class="education-meta">
+                            <span class="cgpa">CGPA: 9.45</span>
+                            <span class="year">2021 – Present</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="education-card">
+                    <div class="education-header">
+                        <div>
+                            <h3>Bhavan's Gangabux Kanoria Vidyamandir</h3>
+                            <p class="education-degree">AISSCE - CBSE</p>
+                        </div>
+                        <div class="education-meta">
+                            <span class="cgpa">97.4%</span>
+                            <span class="year">2019 – 2021</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="education-card">
+                    <div class="education-header">
+                        <div>
+                            <h3>Gitaram Academy</h3>
+                            <p class="education-degree">ISCE - ICSE</p>
+                        </div>
+                        <div class="education-meta">
+                            <span class="cgpa">98%</span>
+                            <span class="year">2010 – 2019</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="section section-alt" id="experience">
+        <div class="container">
+            <h2 class="section-title">Research Experience</h2>
+            <div class="timeline">
+                <!-- Adobe Research -->
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="experience-card">
+                            <div class="experience-header">
+                                <div>
+                                    <h3>Adobe Research, Bangalore</h3>
+                                    <p class="experience-role">Research Intern – Context-Aware Acceleration of Image & Video Generation Pipelines</p>
+                                </div>
+                                <span class="experience-date">May '25 – Jul '25</span>
+                            </div>
+                            <ul class="experience-details">
+                                <li>Introduced token pruning for Rectified Flow-based models (Wan-2.1, FLUX.1)</li>
+                                <li>Integrated KV caching for efficient execution</li>
+                                <li>Achieved 20–35% faster generation with 0.5% quality degradation</li>
+                            </ul>
+                            <div class="tags">
+                                <span class="tag">PyTorch</span>
+                                <span class="tag">Diffusion Models</span>
+                                <span class="tag">Optimization</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DFKI Germany -->
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="experience-card">
+                            <div class="experience-header">
+                                <div>
+                                    <h3>DFKI, Germany</h3>
+                                    <p class="experience-role">DAAD WISE Research Intern – Large Multimodal Models for Streaming Queries</p>
+                                </div>
+                                <span class="experience-date">May '24 – Jul '24</span>
+                            </div>
+                            <ul class="experience-details">
+                                <li>Used Flamingo and LLaVA on traffic videos for congestion prediction</li>
+                                <li>Applied background subtraction and Haar cascades to optimize LMM calls</li>
+                            </ul>
+                            <div class="tags">
+                                <span class="tag">LLaVA</span>
+                                <span class="tag">Computer Vision</span>
+                                <span class="tag">Video Processing</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Max Planck -->
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="experience-card">
+                            <div class="experience-header">
+                                <div>
+                                    <h3>Max Planck Institute-CBG</h3>
+                                    <p class="experience-role">Research Intern – Diffusion Models for Trypanosoma Brucei</p>
+                                </div>
+                                <span class="experience-date">May '23 – Jul '23</span>
+                            </div>
+                            <ul class="experience-details">
+                                <li>Built Conditional DDPM to generate cell stage animations using latent diffusion</li>
+                                <li>Designed autoencoder and SSIM-based dataset sampling pipeline</li>
+                            </ul>
+                            <div class="tags">
+                                <span class="tag">DDPM</span>
+                                <span class="tag">PyTorch</span>
+                                <span class="tag">Generative AI</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BTP -->
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="experience-card">
+                            <div class="experience-header">
+                                <div>
+                                    <h3>BTP, IIT Kharagpur</h3>
+                                    <p class="experience-role">Medical Visual Question Answering using Multimodal Transformers</p>
+                                </div>
+                                <span class="experience-date">Aug '24 – Nov '24</span>
+                            </div>
+                            <ul class="experience-details">
+                                <li>Combined Clinical BERT, ViT, and graph embeddings for VQA tasks</li>
+                                <li>Fine-tuned with Masked Language Modeling and InfoNCE objectives</li>
+                            </ul>
+                            <div class="tags">
+                                <span class="tag">Transformers</span>
+                                <span class="tag">BERT</span>
+                                <span class="tag">Vision-Language</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="section" id="projects">
+        <div class="container">
+            <h2 class="section-title">Projects</h2>
+            <div class="projects-grid">
+                <!-- Mini Shell -->
+                <div class="project-card" data-modal="modal-shell">
+                    <div class="project-header">
+                        <h3>Mini Shell</h3>
+                        <span class="project-icon"><i class="fas fa-terminal"></i></span>
+                    </div>
+                    <p class="project-description">
+                        Custom Linux shell with I/O redirection, background execution, and file-lock detection.
+                    </p>
+                    <div class="tags">
+                        <span class="tag">C</span>
+                        <span class="tag">Linux</span>
+                        <span class="tag">Systems</span>
+                    </div>
+                    <button class="project-btn">View Details</button>
+                </div>
+
+                <!-- M-TCP -->
+                <div class="project-card" data-modal="modal-mtcp">
+                    <div class="project-header">
+                        <h3>Message Oriented TCP (M-TCP)</h3>
+                        <span class="project-icon"><i class="fas fa-network-wired"></i></span>
+                    </div>
+                    <p class="project-description">
+                        Reliable end-to-end protocol on top of UDP with Selective-Repeat ARQ and multithreading.
+                    </p>
+                    <div class="tags">
+                        <span class="tag">C</span>
+                        <span class="tag">Networking</span>
+                        <span class="tag">UDP</span>
+                    </div>
+                    <button class="project-btn">View Details</button>
+                </div>
+
+                <!-- Self-Driving Car -->
+                <div class="project-card" data-modal="modal-car">
+                    <div class="project-header">
+                        <h3>Self-Driving Car</h3>
+                        <span class="project-icon"><i class="fas fa-car"></i></span>
+                    </div>
+                    <p class="project-description">
+                        Trained an RL agent to navigate autonomously using Q-learning with experience replay.
+                    </p>
+                    <div class="tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">PyTorch</span>
+                        <span class="tag">RL</span>
+                    </div>
+                    <button class="project-btn">View Details</button>
+                </div>
+
+                <!-- Heart Attack Prediction -->
+                <div class="project-card" data-modal="modal-heart">
+                    <div class="project-header">
+                        <h3>Heart Attack Risk Prediction</h3>
+                        <span class="project-icon"><i class="fas fa-heart-pulse"></i></span>
+                    </div>
+                    <p class="project-description">
+                        Classical ML + AutoML approach achieving 87.5% accuracy on heart risk dataset.
+                    </p>
+                    <div class="tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">Scikit-learn</span>
+                        <span class="tag">AutoML</span>
+                    </div>
+                    <button class="project-btn">View Details</button>
+                </div>
+
+                <!-- Cache Coherence Simulator -->
+                <div class="project-card" data-modal="modal-cache">
+                    <div class="project-header">
+                        <h3>Cache Coherence Simulator (MSI)</h3>
+                        <span class="project-icon"><i class="fas fa-microchip"></i></span>
+                    </div>
+                    <p class="project-description">
+                        Multi-core cache coherence simulator implementing the MSI protocol for shared memory systems.
+                    </p>
+                    <div class="tags">
+                        <span class="tag">C++</span>
+                        <span class="tag">Systems</span>
+                        <span class="tag">Computer Architecture</span>
+                    </div>
+                    <button class="project-btn">View Details</button>
+                </div>
+
+                <!-- GPT Language Model -->
+                <div class="project-card" data-modal="modal-gpt">
+                    <div class="project-header">
+                        <h3>GPT-based Language Model</h3>
+                        <span class="project-icon"><i class="fas fa-brain"></i></span>
+                    </div>
+                    <p class="project-description">
+                        124M parameter GPT-2 architecture for dialogue generation trained on Shakespeare dataset.
+                    </p>
+                    <div class="tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">PyTorch</span>
+                        <span class="tag">Transformers</span>
+                    </div>
+                    <button class="project-btn">View Details</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Counter Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <i class="fas fa-briefcase"></i>
+                    <h3 class="stat-number" data-target="3">0</h3>
+                    <p>Research Internships</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-project-diagram"></i>
+                    <h3 class="stat-number" data-target="6">0</h3>
+                    <p>Projects Completed</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-code"></i>
+                    <h3 class="stat-number" data-target="1768">0</h3>
+                    <p>Codeforces Rating</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-trophy"></i>
+                    <h3 class="stat-number" data-target="1840">0</h3>
+                    <p>JEE Advanced Rank</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section class="section section-alt" id="achievements">
+        <div class="container">
+            <h2 class="section-title">Achievements</h2>
+            <div class="achievements-grid">
+                <div class="achievement-card">
+                    <i class="fas fa-trophy achievement-icon"></i>
+                    <h4>DAAD WISE 2024 Scholar</h4>
+                    <p>Top 200 in India</p>
+                </div>
+                <div class="achievement-card">
+                    <i class="fas fa-award achievement-icon"></i>
+                    <h4>GKF Scholarship</h4>
+                    <p>Foreign Internship</p>
+                </div>
+                <div class="achievement-card">
+                    <i class="fas fa-code achievement-icon"></i>
+                    <h4>Codeforces Expert</h4>
+                    <p>Rating: 1768</p>
+                </div>
+                <div class="achievement-card">
+                    <i class="fas fa-star achievement-icon"></i>
+                    <h4>CodeChef 5★</h4>
+                    <p>Rating: 2018</p>
+                </div>
+                <div class="achievement-card">
+                    <i class="fas fa-graduation-cap achievement-icon"></i>
+                    <h4>JEE Advanced</h4>
+                    <p>AIR 1840 (Top 1.3%)</p>
+                </div>
+                <div class="achievement-card">
+                    <i class="fas fa-medal achievement-icon"></i>
+                    <h4>ISI B.Stat</h4>
+                    <p>AIR 50</p>
+                </div>
+                <div class="achievement-card">
+                    <i class="fas fa-certificate achievement-icon"></i>
+                    <h4>WBJEE</h4>
+                    <p>AIR 17</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="section" id="skills">
+        <div class="container">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>Languages</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">C++</span>
+                        <span class="skill-tag">C</span>
+                        <span class="skill-tag">LaTeX</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Frameworks & Libraries</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">PyTorch</span>
+                        <span class="skill-tag">TensorFlow</span>
+                        <span class="skill-tag">Scikit-learn</span>
+                        <span class="skill-tag">OpenCV</span>
+                        <span class="skill-tag">NumPy</span>
+                        <span class="skill-tag">Pandas</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Research Areas</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Diffusion Models</span>
+                        <span class="skill-tag">Vision-Language Models</span>
+                        <span class="skill-tag">Reinforcement Learning</span>
+                        <span class="skill-tag">Systems Programming</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Tools</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Linux</span>
+                        <span class="skill-tag">Git</span>
+                        <span class="skill-tag">CUDA</span>
+                        <span class="skill-tag">Jupyter</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Extracurricular Section -->
+    <section class="section section-alt" id="extracurricular">
+        <div class="container">
+            <h2 class="section-title">Leadership & Extracurricular</h2>
+            <div class="extra-grid">
+                <div class="extra-card">
+                    <i class="fas fa-users"></i>
+                    <h3>General Secretary</h3>
+                    <p class="extra-org">E&ECE Department Society</p>
+                    <p>Organized "Corepedia" blog series for internship prep and department events.</p>
+                </div>
+                <div class="extra-card">
+                    <i class="fas fa-music"></i>
+                    <h3>Music Achievements</h3>
+                    <p class="extra-org">General Championship</p>
+                    <p>Gold & Silver medals in Eastern Instrumentals. Bronze medal in Groups event 2025.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section" id="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-container">
+                <p class="contact-subtitle">Feel free to reach out for collaborations, research opportunities, or just to chat!</p>
+                <div class="contact-links">
+                    <a href="mailto:rounakmandal9876@gmail.com" class="contact-link">
+                        <i class="fas fa-envelope"></i>
+                        <span>rounakmandal9876@gmail.com</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/rounakmandal/" target="_blank" class="contact-link">
+                        <i class="fab fa-linkedin"></i>
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="https://github.com/RounakMandal3000" target="_blank" class="contact-link">
+                        <i class="fab fa-github"></i>
+                        <span>GitHub</span>
+                    </a>
+                    <a href="#" class="contact-link">
+                        <i class="fas fa-file-pdf"></i>
+                        <span>Download Résumé</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Modals -->
+    <div id="modal-shell" class="modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <h2>Mini Shell</h2>
+            <div class="modal-tags">
+                <span class="tag">C</span>
+                <span class="tag">Linux</span>
+                <span class="tag">Systems Programming</span>
+            </div>
+            <h3>Overview</h3>
+            <p>A fully functional Linux shell implementation with advanced features for process management and I/O handling.</p>
+            <h3>Key Features</h3>
+            <ul>
+                <li>Script execution with I/O redirection (stdin, stdout, stderr)</li>
+                <li>Support for multiple piped commands</li>
+                <li>Background and foreground process execution</li>
+                <li>Signal handling for program interruption (SIGINT, SIGTSTP)</li>
+                <li>Command history with readline library integration</li>
+                <li>File-lock detection using procfs</li>
+                <li>Malware detection algorithm based on file locks</li>
+            </ul>
+            <h3>Technical Implementation</h3>
+            <p>Built using C system calls (fork, exec, pipe, dup2) and signal handlers. Implements custom parsing logic for command interpretation and process management.</p>
+        </div>
+    </div>
+
+    <div id="modal-mtcp" class="modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <h2>Message Oriented TCP (M-TCP)</h2>
+            <div class="modal-tags">
+                <span class="tag">C</span>
+                <span class="tag">Networking</span>
+                <span class="tag">UDP</span>
+            </div>
+            <h3>Overview</h3>
+            <p>A reliable, message-oriented communication protocol built on top of unreliable UDP, implementing end-to-end reliability guarantees.</p>
+            <h3>Key Features</h3>
+            <ul>
+                <li>Message-oriented, in-order delivery over UDP</li>
+                <li>Full-duplex communication support</li>
+                <li>Selective-Repeat ARQ for reliability</li>
+                <li>Flow control and congestion avoidance</li>
+                <li>Multithreading with mutex synchronization</li>
+                <li>Sliding window protocol implementation</li>
+                <li>Packet drop simulation for testing</li>
+            </ul>
+            <h3>Technical Implementation</h3>
+            <p>Implements custom packet headers, acknowledgment mechanisms, and timeout-based retransmission. Uses POSIX threads for concurrent send/receive operations.</p>
+        </div>
+    </div>
+
+    <div id="modal-car" class="modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <h2>Self-Driving Car with Deep Q-Learning</h2>
+            <div class="modal-tags">
+                <span class="tag">Python</span>
+                <span class="tag">PyTorch</span>
+                <span class="tag">Reinforcement Learning</span>
+            </div>
+            <h3>Overview</h3>
+            <p>An autonomous driving agent trained using Deep Q-Learning to navigate complex environments without human intervention.</p>
+            <h3>Key Features</h3>
+            <ul>
+                <li>Neural network Q-function approximation</li>
+                <li>30-neuron hidden layer with ReLU activation</li>
+                <li>Experience replay buffer (10,000 transitions)</li>
+                <li>Epsilon-greedy exploration strategy</li>
+                <li>Temperature-based action selection (T=10)</li>
+                <li>Adam optimizer for gradient descent</li>
+            </ul>
+            <h3>Technical Implementation</h3>
+            <p>Built with PyTorch using a feed-forward neural network. Implements standard DQN algorithm with experience replay and target network updates for stable learning.</p>
+        </div>
+    </div>
+
+    <div id="modal-heart" class="modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <h2>Heart Attack Risk Prediction</h2>
+            <div class="modal-tags">
+                <span class="tag">Python</span>
+                <span class="tag">Scikit-learn</span>
+                <span class="tag">AutoML</span>
+            </div>
+            <h3>Overview</h3>
+            <p>A comprehensive machine learning solution for predicting heart attack risk using both classical ML and automated machine learning approaches.</p>
+            <h3>Key Features</h3>
+            <ul>
+                <li>Exploratory data analysis with Seaborn (Countplot, Pairplot, Distplot, Heatmap)</li>
+                <li>Multiple classifier comparison: Logistic Regression, SVM, Decision Tree, Random Forest, KNN, AdaBoost</li>
+                <li>Best model achieved 87.5% accuracy</li>
+                <li>Hyperparameter tuning using GridSearchCV</li>
+                <li>AutoML implementation with EvalML library</li>
+                <li>AUC score of 0.87 on test set</li>
+            </ul>
+            <h3>Technical Implementation</h3>
+            <p>Comprehensive data preprocessing, feature engineering, and model selection pipeline. Automated hyperparameter optimization and ensemble methods for improved predictions.</p>
+        </div>
+    </div>
+
+    <div id="modal-cache" class="modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <h2>Cache Coherence Simulator (MSI Protocol)</h2>
+            <div class="modal-tags">
+                <span class="tag">C++</span>
+                <span class="tag">Systems Programming</span>
+                <span class="tag">Computer Architecture</span>
+            </div>
+            <h3>Overview</h3>
+            <p>A multi-core cache coherence simulator that implements the MSI (Modified, Shared, Invalid) protocol to demonstrate how cache coherence is maintained in shared memory systems.</p>
+            <h3>Key Features</h3>
+            <ul>
+                <li>Full implementation of MSI cache coherence protocol</li>
+                <li>Simulates multi-core processor interactions</li>
+                <li>Tracks cache states (Modified, Shared, Invalid)</li>
+                <li>Monitors cache hits and misses across cores</li>
+                <li>Models shared memory system behavior</li>
+                <li>Validates cache coherence correctness</li>
+            </ul>
+            <h3>Technical Implementation</h3>
+            <p>Built with C++ using object-oriented design principles. Implements state machines for cache line transitions, bus snooping protocols, and memory access patterns. Includes comprehensive testing framework and performance metrics.</p>
+            <h3>GitHub</h3>
+            <p><a href="https://github.com/RounakMandal3000/Cache_coherence_MSI" target="_blank" style="color: var(--primary-color);">View on GitHub →</a></p>
+        </div>
+    </div>
+
+    <div id="modal-gpt" class="modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <h2>GPT-based Language Model</h2>
+            <div class="modal-tags">
+                <span class="tag">Python</span>
+                <span class="tag">PyTorch</span>
+                <span class="tag">Tiktoken</span>
+                <span class="tag">Transformers</span>
+            </div>
+            <h3>Project Timeline</h3>
+            <p><strong>Nov '24 - Dec '24</strong></p>
+            <h3>Objective</h3>
+            <p>Building a GPT-2 based architecture for dialogue generation using Little Shakespeare dataset.</p>
+            <h3>Key Achievements</h3>
+            <ul>
+                <li>Designed and implemented a 124M parameter GPT-based language model trained on 300k+ tokens from Little Shakespeare dataset</li>
+                <li>Built custom MLP and multi-head attention mechanisms from scratch</li>
+                <li>Utilized gradient accumulation for handling large batch sizes efficiently</li>
+                <li>Implemented mixed-precision training to reduce memory usage and improve computational efficiency</li>
+                <li>Applied gradient clipping and learning rate scheduling for stable training</li>
+                <li>Fine-tuned the pre-trained model on SQuAD dataset using Hugging Face Datasets library</li>
+                <li>Achieved consistent loss reduction through hyperparameter tuning and advanced optimizer settings</li>
+                <li>Successfully adapted the model for question answering tasks on SQuAD</li>
+            </ul>
+            <h3>Technical Implementation</h3>
+            <p>Implemented a full GPT-2 architecture including positional encodings, layer normalization, and causal masking. Used PyTorch for model development and Tiktoken for tokenization. Applied modern training techniques including:</p>
+            <ul>
+                <li>Mixed-precision training with automatic mixed precision (AMP)</li>
+                <li>Gradient accumulation for effective large batch training</li>
+                <li>Learning rate warmup and cosine decay scheduling</li>
+                <li>Gradient clipping for training stability</li>
+            </ul>
+            <h3>Results</h3>
+            <p>Achieved significant training efficiency improvements and demonstrated strong performance on both dialogue generation and question answering tasks.</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Rounak Mandal. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

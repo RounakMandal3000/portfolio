@@ -1,0 +1,8 @@
+- [x] Clarify Project Requirements: Minimalistic portfolio website for an engineering graduate using HTML, CSS, and JavaScript.
+- [ ] Scaffold the Project
+- [ ] Customize the Project
+- [ ] Install Required Extensions
+- [ ] Compile the Project
+- [ ] Create and Run Task
+- [ ] Launch the Project
+- [ ] Ensure Documentation is Complete
