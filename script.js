@@ -275,15 +275,21 @@ document.addEventListener('keydown', (e) => {
 // ===== Parallax Effect on Hero =====
 window.addEventListener('scroll', () => {
     const heroContent = document.querySelector('.hero-content');
-    if (heroContent) {
+    const hero = document.querySelector('.hero');
+    
+    if (heroContent && hero) {
         const scrolled = window.scrollY;
-        const heroHeight = document.querySelector('.hero').offsetHeight;
+        const heroHeight = hero.offsetHeight;
         
         // Only apply parallax within hero section
         if (scrolled < heroHeight) {
             heroContent.style.transform = `translateY(${scrolled * 0.3}px)`;
-            // Make it fade more gradually - opacity stays higher for longer
-            heroContent.style.opacity = 1 - (scrolled / (heroHeight * 1.5));
+            // Make it fade more gradually and disappear before reaching next section
+            const fadePoint = heroHeight * 0.8; // Start fading earlier
+            heroContent.style.opacity = Math.max(0, 1 - (scrolled / fadePoint));
+        } else {
+            // Ensure it's completely hidden after hero section
+            heroContent.style.opacity = 0;
         }
     }
 });
