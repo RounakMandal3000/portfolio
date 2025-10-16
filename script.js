@@ -265,7 +265,13 @@ window.addEventListener('scroll', () => {
     const heroContent = document.querySelector('.hero-content');
     if (heroContent) {
         const scrolled = window.scrollY;
-        heroContent.style.transform = `translateY(${scrolled * 0.3}px)`;
-        heroContent.style.opacity = 1 - (scrolled / 500);
+        const heroHeight = document.querySelector('.hero').offsetHeight;
+        
+        // Only apply parallax within hero section
+        if (scrolled < heroHeight) {
+            heroContent.style.transform = `translateY(${scrolled * 0.3}px)`;
+            // Make it fade more gradually - opacity stays higher for longer
+            heroContent.style.opacity = 1 - (scrolled / (heroHeight * 1.5));
+        }
     }
 });
